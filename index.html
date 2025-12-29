@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAI for Health Informatics Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #f0f4f8;
+        }
+        .header-gradient {
+            background: radial-gradient(circle at top right, #059669, #064e3b);
+            position: relative;
+            overflow: hidden;
+        }
+        .header-gradient::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+            opacity: 0.05;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04);
+        }
+        .table-row-hover:hover {
+            background-color: rgba(255, 255, 255, 1);
+            box-shadow: inset 4px 0 0 #059669;
+            transition: all 0.2s ease;
+        }
+        .tech-tag {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 4px 12px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #475569;
+        }
+        .subtopic-list {
+            font-size: 0.75rem;
+            line-height: 1.4;
+            color: #64748b;
+        }
+        .subtopic-item::before {
+            content: "•";
+            color: #10b981;
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+        .icon-link {
+            transition: transform 0.2s;
+        }
+        .icon-link:hover {
+            transform: translateX(4px);
+        }
+    </style>
+</head>
+<body class="text-slate-900 min-h-screen pb-12">
+
+    <!-- Hero Header Section -->
+    <header class="header-gradient text-white pb-32 pt-20 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row md:items-start justify-between gap-8">
+                <div class="max-w-4xl">
+                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-400/20 border border-emerald-400/30 text-xs font-bold mb-6 backdrop-blur-md text-emerald-100">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 mr-2 animate-pulse"></span>
+                        Advanced Specialization Track
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                        Generative AI for <br><span class="text-emerald-300">Health Informatics</span>
+                    </h1>
+                    <p class="text-emerald-100/80 mt-6 text-xl font-light leading-relaxed max-w-3xl">
+                        Mastering LLMs, FHIR standards, and Multimodal Agentic workflows for Clinical Decision Support.
+                    </p>
+                    <div class="flex flex-wrap gap-8 mt-10">
+                        <div class="text-sm"><span class="block font-black text-white uppercase text-[10px] tracking-widest mb-1 opacity-70">Target Audience</span> Health Data Scientists</div>
+                        <div class="text-sm"><span class="block font-black text-white uppercase text-[10px] tracking-widest mb-1 opacity-70">Prerequisites</span> Python, ML Basics</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 -mt-16">
+        
+        <!-- Table Container -->
+        <div class="bg-white/70 backdrop-blur-md rounded-[2.5rem] shadow-2xl shadow-emerald-900/5 overflow-hidden border border-white">
+            <div class="px-10 py-8 border-b border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div>
+                    <h2 class="font-extrabold text-slate-800 text-2xl tracking-tight uppercase text-sm tracking-[0.1em]">Curriculum Dashboard</h2>
+                    <p class="text-sm text-slate-500 font-medium mt-1">Multi-modal learning paths from subtopics to technical labs.</p>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-50/80">
+                            <th class="px-10 py-5 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] w-[25%]">Module & Subtopics</th>
+                            <th class="px-6 py-5 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] w-[18%]">Code & Labs</th>
+                            <th class="px-6 py-5 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] w-[18%]">Artifacts & Resources</th>
+                            <th class="px-6 py-5 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] w-[18%]">Podcast</th>
+                            <th class="px-6 py-5 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] w-[18%]">Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        
+                        <!-- Module 1 -->
+                        <tr class="table-row-hover transition-all">
+                            <td class="px-10 py-8 align-top">
+                                <div class="font-bold text-slate-900 text-base mb-2">1. Foundations</div>
+                                <div class="subtopic-list pl-4">
+                                    <div class="subtopic-item">BioBERT & Med-PaLM</div>
+                                    <div class="subtopic-item">Prompt Engineering (CoT)</div>
+                                    <div class="subtopic-item">HIPAA & Ethics</div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-sm font-bold text-slate-700 flex items-center hover:text-emerald-600 mb-1 icon-link">
+                                    <span class="mr-2">🧪</span> diagnostics.ipynb
+                                </a>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-xs font-semibold text-indigo-600 flex items-center mb-2 icon-link">
+                                    <span class="mr-2">📄</span> Med-PaLM 2 Paper
+                                </a>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <div class="flex items-center gap-2 group cursor-pointer">
+                                    <div class="w-8 h-8 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                        <span class="text-[10px]">▶</span>
+                                    </div>
+                                    <span class="text-xs font-medium text-slate-600">The Rise of Med-PaLM</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-xs font-medium text-emerald-700 hover:underline flex items-center icon-link">
+                                    <span class="mr-2">📝</span> Lec_01.pdf
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- Module 2 -->
+                        <tr class="table-row-hover transition-all">
+                            <td class="px-10 py-8 align-top">
+                                <div class="font-bold text-slate-900 text-base mb-2">2. Data & FHIR</div>
+                                <div class="subtopic-list pl-4">
+                                    <div class="subtopic-item">SNOMED & LOINC</div>
+                                    <div class="subtopic-item">FHIR RESTful APIs</div>
+                                    <div class="subtopic-item">Synthetic Record Gen</div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-sm font-bold text-slate-700 flex items-center hover:text-emerald-600 mb-1 icon-link">
+                                    <span class="mr-2">🧪</span> fhir_parser.py
+                                </a>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-xs font-semibold text-indigo-600 flex items-center icon-link">
+                                    <span class="mr-2">📄</span> HL7 Specs
+                                </a>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <div class="flex items-center gap-2 group cursor-pointer">
+                                    <div class="w-8 h-8 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                        <span class="text-[10px]">▶</span>
+                                    </div>
+                                    <span class="text-xs font-medium text-slate-600">FHIR Deep Dive</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-xs font-medium text-emerald-700 hover:underline flex items-center icon-link">
+                                    <span class="mr-2">📝</span> Lec_02.pdf
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- Module 3 -->
+                        <tr class="table-row-hover transition-all">
+                            <td class="px-10 py-8 align-top">
+                                <div class="font-bold text-emerald-800 text-base mb-2">3. Embeddings & Search</div>
+                                <div class="subtopic-list pl-4">
+                                    <div class="subtopic-item">PubMedBERT Vectors</div>
+                                    <div class="subtopic-item">Cosine Similarity</div>
+                                    <div class="subtopic-item">Semantic Chunking</div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-sm font-bold text-slate-700 flex items-center hover:text-emerald-600 mb-1 icon-link">
+                                    <span class="mr-2">🧪</span> embeddings.py
+                                </a>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-xs font-semibold text-indigo-600 flex items-center icon-link">
+                                    <span class="mr-2">📄</span> Med-Embeddings
+                                </a>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <div class="flex items-center gap-2 group cursor-pointer">
+                                    <div class="w-8 h-8 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                        <span class="text-[10px]">▶</span>
+                                    </div>
+                                    <span class="text-xs font-medium text-slate-600">Vector Spaces</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-xs font-medium text-emerald-700 hover:underline flex items-center icon-link">
+                                    <span class="mr-2">📝</span> Lec_03.pdf
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- Module 4 -->
+                        <tr class="table-row-hover transition-all">
+                            <td class="px-10 py-8 align-top">
+                                <div class="font-bold text-emerald-800 text-base mb-2">4. Vector Databases</div>
+                                <div class="subtopic-list pl-4">
+                                    <div class="subtopic-item">HNSW vs IVF Indexes</div>
+                                    <div class="subtopic-item">Pinecone Setup</div>
+                                    <div class="subtopic-item">Hybrid Search</div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-sm font-bold text-slate-700 flex items-center hover:text-emerald-600 mb-1 icon-link">
+                                    <span class="mr-2">🧪</span> vectordb_lab.py
+                                </a>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-xs font-semibold text-indigo-600 flex items-center icon-link">
+                                    <span class="mr-2">📄</span> Index Optimization
+                                </a>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <div class="flex items-center gap-2 group cursor-pointer">
+                                    <div class="w-8 h-8 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                        <span class="text-[10px]">▶</span>
+                                    </div>
+                                    <span class="text-xs font-medium text-slate-600">Scaling Retrieval</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-xs font-medium text-emerald-700 hover:underline flex items-center icon-link">
+                                    <span class="mr-2">📝</span> Lec_04.pdf
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- Module 5 -->
+                        <tr class="table-row-hover transition-all">
+                            <td class="px-10 py-8 align-top">
+                                <div class="font-bold text-emerald-800 text-base mb-2">5. RAG Architecture</div>
+                                <div class="subtopic-list pl-4">
+                                    <div class="subtopic-item">Query Transformation</div>
+                                    <div class="subtopic-item">Reranking Layers</div>
+                                    <div class="subtopic-item">Ragas Evaluation</div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-sm font-bold text-slate-700 flex items-center hover:text-emerald-600 mb-1 icon-link">
+                                    <span class="mr-2">🧪</span> rag_pipeline.py
+                                </a>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-xs font-semibold text-indigo-600 flex items-center icon-link">
+                                    <span class="mr-2">📄</span> RAG Clinical Case
+                                </a>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <div class="flex items-center gap-2 group cursor-pointer">
+                                    <div class="w-8 h-8 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                        <span class="text-[10px]">▶</span>
+                                    </div>
+                                    <span class="text-xs font-medium text-slate-600">Reliable Context</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-xs font-medium text-emerald-700 hover:underline flex items-center icon-link">
+                                    <span class="mr-2">📝</span> Lec_05.pdf
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- Module 6 -->
+                        <tr class="table-row-hover transition-all">
+                            <td class="px-10 py-8 align-top">
+                                <div class="font-bold text-slate-900 text-base mb-2">6. Multimodal AI</div>
+                                <div class="subtopic-list pl-4">
+                                    <div class="subtopic-item">DICOM Metadata</div>
+                                    <div class="subtopic-item">LLaVA-Med VLMs</div>
+                                    <div class="subtopic-item">Visual Q&A</div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-sm font-bold text-slate-700 flex items-center hover:text-emerald-600 mb-1 icon-link">
+                                    <span class="mr-2">🧪</span> imaging_vlm.py
+                                </a>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-xs font-semibold text-indigo-600 flex items-center mb-2 icon-link">
+                                    <span class="mr-2">📄</span> VLM Benchmark
+                                </a>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <div class="flex items-center gap-2 group cursor-pointer">
+                                    <div class="w-8 h-8 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                        <span class="text-[10px]">▶</span>
+                                    </div>
+                                    <span class="text-xs font-medium text-slate-600">Clinical Imaging</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-xs font-medium text-emerald-700 hover:underline flex items-center icon-link">
+                                    <span class="mr-2">📝</span> Lec_06.pdf
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- Module 7 -->
+                        <tr class="table-row-hover transition-all">
+                            <td class="px-10 py-8 align-top">
+                                <div class="font-bold text-slate-900 text-base mb-2">7. Clinical Agents</div>
+                                <div class="subtopic-list pl-4">
+                                    <div class="subtopic-item">ReAct Framework</div>
+                                    <div class="subtopic-item">Safety Guardrails</div>
+                                    <div class="subtopic-item">Tool Augmentation</div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-sm font-bold text-slate-700 flex items-center hover:text-emerald-600 mb-1 icon-link">
+                                    <span class="mr-2">🧪</span> dosage_agent.py
+                                </a>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-xs font-semibold text-indigo-600 flex items-center mb-2 icon-link">
+                                    <span class="mr-2">📄</span> Safety Systems
+                                </a>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <div class="flex items-center gap-2 group cursor-pointer">
+                                    <div class="w-8 h-8 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                        <span class="text-[10px]">▶</span>
+                                    </div>
+                                    <span class="text-xs font-medium text-slate-600">Agentic Safety</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-xs font-medium text-emerald-700 hover:underline flex items-center icon-link">
+                                    <span class="mr-2">📝</span> Lec_07.pdf
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- Module 8 -->
+                        <tr class="table-row-hover transition-all">
+                            <td class="px-10 py-8 align-top">
+                                <div class="font-bold text-slate-900 text-base mb-2">8. CDS Workflows</div>
+                                <div class="subtopic-list pl-4">
+                                    <div class="subtopic-item">LangGraph Cycles</div>
+                                    <div class="subtopic-item">Multi-Agent State</div>
+                                    <div class="subtopic-item">System Orchestration</div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-sm font-bold text-slate-700 flex items-center hover:text-emerald-600 mb-1 icon-link">
+                                    <span class="mr-2">🧪</span> cds_graph.py
+                                </a>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-xs font-semibold text-indigo-600 flex items-center mb-2 icon-link">
+                                    <span class="mr-2">📄</span> Deployment
+                                </a>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <div class="flex items-center gap-2 group cursor-pointer">
+                                    <div class="w-8 h-8 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                        <span class="text-[10px]">▶</span>
+                                    </div>
+                                    <span class="text-xs font-medium text-slate-600">Future Clinic</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-8 align-top">
+                                <a href="#" class="text-xs font-medium text-emerald-700 hover:underline flex items-center icon-link">
+                                    <span class="mr-2">📝</span> Lec_08.pdf
+                                </a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Capstone Section -->
+            <div class="bg-emerald-900 p-10 text-white">
+                <div class="flex flex-col md:flex-row gap-10 items-center">
+                    <div class="flex-1">
+                        <div class="text-emerald-400 font-black text-xs uppercase tracking-widest mb-2">Final Integration</div>
+                        <h3 class="text-3xl font-black mb-4">Capstone: <span class="underline decoration-emerald-500/50 underline-offset-8">The AI Medical Scribe</span></h3>
+                        <p class="text-emerald-100/70 mb-6 leading-relaxed max-w-2xl">
+                            A multi-agent system using LangGraph that processes clinical dialogue into structured EHR data.
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <button class="bg-emerald-400 hover:bg-emerald-300 text-emerald-950 font-black px-10 py-5 rounded-2xl shadow-2xl transition-all hover:scale-105">
+                            Submit Final Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Stack section -->
+        <section class="mt-12 text-center">
+            <h4 class="text-xs font-black uppercase text-slate-400 tracking-widest mb-6">Course Tech Stack</h4>
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="glass-card px-6 py-3 rounded-2xl flex items-center gap-3">
+                    <span class="text-sm font-bold text-slate-700">Python 3.10</span>
+                </div>
+                <div class="glass-card px-6 py-3 rounded-2xl flex items-center gap-3">
+                    <span class="text-sm font-bold text-slate-700">LangGraph</span>
+                </div>
+                <div class="glass-card px-6 py-3 rounded-2xl flex items-center gap-3">
+                    <span class="text-sm font-bold text-slate-700">LlamaIndex</span>
+                </div>
+                <div class="glass-card px-6 py-3 rounded-2xl flex items-center gap-3">
+                    <span class="text-sm font-bold text-slate-700">HL7 FHIR</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-20 text-center text-slate-400 pb-10 border-t border-slate-200 pt-10">
+        <p class="text-[10px] font-black uppercase tracking-[0.4em]">Academic Intelligence Framework • MMXXV</p>
+    </footer>
+
+</body>
+</html>
